@@ -20,7 +20,7 @@ USE_TZ = True
 LANGUAGE_CODE = "en"
 LANGUAGES = [("en", _("English"))]
 
-LOCALE_PATHS = [dirs.BASE_DIR / "conf" / "locale"]
+LOCALE_PATHS = [dirs.BASE_DIR / "locale"]
 
 ################
 # APPLICATIONS #

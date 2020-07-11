@@ -1,5 +1,6 @@
-from configfactory.models import EnvironmentIdent
 from pydantic import BaseModel
+
+from configfactory.models import EnvironmentIdent
 
 
 class EnvironmentCreate(BaseModel):

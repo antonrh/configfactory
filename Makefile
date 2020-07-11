@@ -7,5 +7,12 @@ help:
 install: ## Install dependencies
 	poetry install
 
-i18n-make:
-	cd src/ && django-admin makemessages -l en --settings=configfactory.conf.settings
+lint: ## Run code linters
+	isort --check configfactory tests
+	black --check configfactory tests
+	flake8 configfactory tests
+	mypy configfactory tests
+
+fmt format: ## Run code formatters
+	isort configfactory tests
+	black configfactory tests

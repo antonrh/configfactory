@@ -1,6 +1,6 @@
-from configfactory.models import Component, ComponentName
+from configfactory.models import Component
 
 
 class ComponentService:
-    async def create_component(self, name: ComponentName) -> Component:
-        return Component(name=name)
+    async def create_component(self, component: Component) -> Component:
+        return component

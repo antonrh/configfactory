@@ -1,8 +1,7 @@
 from fastapi import FastAPI
 
-from configfactory import api, db, auth
+from configfactory import api, auth, db
 from configfactory.conf import settings
-
 from configfactory.routers.environment import router as environment_routers
 
 

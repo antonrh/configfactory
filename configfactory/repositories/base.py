@@ -1,5 +1,4 @@
 from databases import Database
-from fastapi import Depends
 
 from configfactory.utils.dependencies import DependsState
 

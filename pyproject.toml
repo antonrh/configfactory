@@ -7,13 +7,20 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.8"
-django = "3.1b1"
+fastapi = "^0.58.1"
+uvicorn = "^0.11.5"
+lazy-object-proxy = "^1.5.0"
+python-dotenv = "^0.14.0"
+databases = {extras = ["sqlite"], version = "^0.3.2"}
+sqlalchemy-utils = "^0.36.8"
+alembic = "^1.4.2"
 
 [tool.poetry.dev-dependencies]
 isort = "^5.0.7"
 mypy = "^0.782"
 black = "^19.10b0"
 flake8 = "^3.8.3"
+pytest = "^5.4.3"
 
 [tool.poetry.scripts]
 configfactory = "configfactory.cli:main"

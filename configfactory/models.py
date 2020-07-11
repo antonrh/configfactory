@@ -1,11 +1,19 @@
+import uuid
 from enum import Enum
 from typing import NewType
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, EmailStr, Field
 
 ProjectIdent = NewType("ProjectIdent", str)
 EnvironmentIdent = NewType("EnvironmentIdent", str)
 ComponentIdent = NewType("ComponentIdent", str)
+
+
+class User(BaseModel):
+    id: uuid.UUID = Field(default_factory=uuid.uuid4)
+    email: EmailStr
+    active: bool = True
+    superuser: bool = False
 
 
 class Project(BaseModel):

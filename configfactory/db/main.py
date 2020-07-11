@@ -13,3 +13,7 @@ def setup(app: FastAPI) -> None:
     app.add_event_handler("startup", database.connect)
     app.add_event_handler("shutdown", database.disconnect)
     app.state.database = database
+
+
+def get_database(app: FastAPI) -> Database:
+    return app.state.database

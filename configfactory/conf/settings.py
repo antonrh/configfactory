@@ -33,6 +33,7 @@ ROOT_URLCONF = "configfactory.conf.urls"
 ############
 # DATABASE #
 ############
+DATABASES = {"default": env.db("DATABASE_URL", default="sqlite://")}
 
 ###############
 # I18N / L10N #
@@ -44,7 +45,29 @@ USE_TZ = True
 LANGUAGE_CODE = "en-us"
 LANGUAGES = (("en", _("English")),)
 
+################
+# STATIC FILES #
+################
+STATIC_URL = "/static/"
+
 ########
 # APPS #
 ########
-INSTALLED_APPS = ("configfactory",)
+INSTALLED_APPS = (
+    "django.contrib.staticfiles",
+    "django.contrib.contenttypes",
+    "django.contrib.auth",
+    "configfactory",
+)
+
+########
+# REST #
+########
+REST_FRAMEWORK = {
+    "DEFAULT_PARSER_CLASSES": ["rest_framework.parsers.JSONParser"],
+    "DEFAULT_RENDERER_CLASSES": ["rest_framework.renderers.JSONRenderer"],
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.SessionAuthentication"
+    ],
+    "TEST_REQUEST_DEFAULT_FORMAT": "json",
+}

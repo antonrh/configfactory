@@ -3,17 +3,20 @@ import pathlib
 import environ
 from django.utils.translation import gettext_lazy as _
 
-###############
-# DIRECTORIES #
-###############
+#########
+# PATHS #
+#########
 BASE_DIR = pathlib.Path(__file__).resolve(strict=True).parent.parent
 ROOT_DIR = BASE_DIR.parent
+ENV_FILE = ROOT_DIR.joinpath(".env")
 
 ###############
 # ENVIRONMENT #
 ###############
 env = environ.Env()
-env.read_env(".env")
+
+if ENV_FILE.exists():
+    env.read_env(str(ENV_FILE))
 
 #########
 # DEBUG #
@@ -42,6 +45,7 @@ TIME_ZONE = "UTC"
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
+
 LANGUAGE_CODE = "en-us"
 LANGUAGES = (("en", _("English")),)
 

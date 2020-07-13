@@ -16,3 +16,6 @@ lint: ## Run code linters
 fmt format: ## Run code formatters
 	isort configfactory tests
 	black configfactory tests
+
+i18n-make:
+	cd configfactory/ && django-admin makemessages -l en --settings=configfactory.conf.settings

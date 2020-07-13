@@ -31,7 +31,7 @@ SECRET_KEY = env.str("SECRET_KEY", default="secret")
 #######
 # URL #
 #######
-ROOT_URLCONF = "configfactory.conf.urls"
+ROOT_URLCONF = "configfactory.urls"
 
 ############
 # DATABASE #
